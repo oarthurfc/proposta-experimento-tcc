@@ -270,7 +270,60 @@ Instruções simples e padronizadas antes de iniciar a tarefa.
 6. Registro automático dos dados.  
 7. Encerramento e agradecimento.
 
-### 11.4 Plano piloto
+### 11.4 Fluxograma operacional do experimento
+
+O diagrama abaixo representa o passo a passo completo da operacionalização do experimento, destacando instrumentos, variáveis, métricas e stakeholders envolvidos em cada etapa.
+
+```mermaid
+flowchart TD
+    subgraph Preparação
+        A1[Definir escopo e hipóteses] --> A2[Desenvolver aplicação web<br><i>Instrumentos: código-fonte, servidor</i>]
+        A2 --> A3[Implementar versão Controle<br><b>Grupo A</b> – sem recompensas]
+        A2 --> A4[Implementar versão Tratamento<br><b>Grupo B</b> – com micro-recompensas]
+        A3 & A4 --> A5[Configurar sistema de logs<br><i>Coleta automática de métricas</i>]
+        A5 --> A6[Preparar formulário de consentimento<br><i>Stakeholders: pesquisador, participantes</i>]
+        A6 --> A7[Executar piloto com 2–3 usuários<br><i>Validar fluxo e instrumentos</i>]
+    end
+
+    subgraph Recrutamento
+        B1[Divulgar convite<br><i>Stakeholders: pesquisador, professores</i>] --> B2[Participante acessa link]
+        B2 --> B3{Aceita consentimento?}
+        B3 -- Não --> B4[Encerrar participação]
+        B3 -- Sim --> B5[Registrar aceite<br><i>Instrumento: formulário</i>]
+    end
+
+    subgraph Execução
+        B5 --> C1[Randomização automática<br><i>Variável independente: presença de micro-recompensas</i>]
+        C1 --> C2A[Grupo A – Controle]
+        C1 --> C2B[Grupo B – Tratamento]
+        C2A & C2B --> C3[Usuário realiza a tarefa]
+        C3 --> C4[Sistema registra eventos em tempo real<br><i>Métricas: tempo de sessão, interações,<br>cliques em recompensas, conclusão, etc.</i>]
+        C4 --> C5[Tarefa concluída ou abandono detectado<br><i>Métricas: taxa de conclusão, taxa de abandono,<br>ponto de abandono médio</i>]
+        C5 --> C6[Exibir tela de encerramento<br>e agradecimento]
+    end
+
+    subgraph Pós-experimento
+        C6 --> D1[Formulário opcional de feedback<br><i>Métricas: satisfação Likert, NPS</i>]
+        D1 --> D2[Monitorar retorno em 1 e 7 dias<br><i>Métricas: taxa de retorno, sessões por usuário</i>]
+        D2 --> D3[Exportar logs para análise<br><i>Instrumentos: scripts de ETL</i>]
+        D3 --> D4[Análise estatística<br><i>Teste t / Mann-Whitney, proporções</i>]
+        D4 --> D5[Gerar relatório final<br><i>Stakeholders: pesquisador, professores</i>]
+    end
+
+    A7 --> B1
+```
+
+**Legenda do fluxograma**
+
+| Elemento | Descrição |
+|----------|-----------|
+| **Instrumentos** | Ferramentas e artefatos utilizados (código, logs, formulários, scripts). |
+| **Variável independente** | Presença de micro-recompensas (sim/não). |
+| **Variáveis dependentes** | Tempo de permanência, taxa de conclusão, taxa de retorno, satisfação. |
+| **Métricas** | Indicadores quantitativos coletados (ver Tabela 3.4). |
+| **Stakeholders** | Pesquisador, participantes, professores. |
+
+### 11.5 Plano piloto
 Será realizado com 2–3 participantes para validação do fluxo e coleta.
 
 ---

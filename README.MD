@@ -1,5 +1,5 @@
 # Plano de Experimento – Scoping e Planejamento  
-## Impacto de Micro-Recompensas Gamificadas na Permanência do Usuário
+## Impacto de Micro-Recompensas Gamificadas na Retenção do Usuário
 
 ---
 

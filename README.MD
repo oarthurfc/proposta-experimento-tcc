@@ -13,15 +13,16 @@ EXP-GAMIF-001
 
 ### 1.3 Versão do documento e histórico de revisão
 - **v1.0 (22/11/2025)** – primeira versão elaborada para entrega da disciplina.
+- **v1.1 (01/12/2025)** – adição do fluxograma operacional do experimento e atualização do plano piloto.
+- **v1.2 (05/12/2025)** – inclusão de vídeo explicativo sobre avaliação de validade.
 
 ### 1.4 Datas
 - Criação: 22/11/2025  
-- Última atualização: 22/11/2025
+- Última atualização: 05/12/2025
 
 ### 1.5 Autores
-- Nome: Arthur  
+- Nome: Arthur Ferreira
   Área: Engenharia de Software  
-  Contato: (informar)
 
 ### 1.6 Responsável principal
 Arthur – responsável pelo desenho, execução e análise do experimento.
